@@ -1,0 +1,68 @@
+<%- include("../partials/navbar") %>
+
+<div class="row justify-content-center">
+
+<div class="col-md-8">
+
+<div class="card shadow">
+
+<div class="card-body">
+
+<h2>
+
+Edit Article
+
+</h2>
+
+<form
+action="/articles/<%= article._id %>?_method=PUT"
+method="POST">
+
+<div class="mb-3">
+
+<label>
+
+Title
+
+</label>
+
+<input
+type="text"
+name="title"
+value="<%= article.title %>"
+class="form-control">
+
+</div>
+
+<div class="mb-3">
+
+<label>
+
+Content
+
+</label>
+
+<textarea
+name="content"
+rows="8"
+class="form-control"><%= article.content %></textarea>
+
+</div>
+
+<button class="btn btn-success">
+
+Update
+
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<%- include("../partials/footer") %>

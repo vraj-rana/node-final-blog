@@ -1,0 +1,23 @@
+<%- include("../partials/navbar") %>
+
+<h2 class="mb-4">
+
+My Articles
+
+</h2>
+
+<% if(articles.length===0){ %>
+
+<div class="alert alert-warning">
+
+No Articles Yet
+
+</div>
+
+<% } %>
+
+<% articles.forEach(article => { %>
+    <%- include("articleItem", { article: article }) %>
+<% }) %>
+
+<%- include("../partials/footer") %>

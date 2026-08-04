@@ -1,0 +1,25 @@
+<%- include("../partials/navbar") %>
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+
+    <h2>All Articles</h2>
+
+    <a href="/articles/new" class="btn btn-primary">
+        + Add Article
+    </a>
+
+</div>
+
+<% if(articles.length === 0){ %>
+
+<div class="alert alert-info">
+    No Articles Found
+</div>
+
+<% } %>
+
+<% articles.forEach(article => { %>
+    <%- include("articleItem", { article: article }) %>
+<% }) %>
+
+<%- include("../partials/footer") %>
